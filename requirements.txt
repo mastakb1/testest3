@@ -1,0 +1,5 @@
+toml
+plotly
+streamlit
+mysql-connector-python
+pandas
