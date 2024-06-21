@@ -59,9 +59,9 @@ sales_time_hist_df = sales_time_df['LineTotal']
 st.title('Sales Dashboards')
 
 # Plot Tren Penjualan Harian
-st.header('Tren Penjualan Harian')
+st.header('Penjualan Harian')
 daily_sales = sales_time_df.groupby('fulldates').agg({'LineTotal': 'sum'}).reset_index()
-line_fig = px.line(daily_sales, x='fulldates', y='LineTotal', title='Tren Penjualan Harian')
+line_fig = px.line(daily_sales, x='fulldates', y='LineTotal')
 st.plotly_chart(line_fig)
 st.write("Grafik ini menunjukkan bagaimana penjualan berubah setiap harinya sepanjang tahun yang dipilih. Pola ini dapat membantu mengidentifikasi tren musiman atau hari-hari dengan penjualan tertinggi.")
 st.write("Kesimpulan: Dari tahun ke tahun, penjualan mengalami naik turun, di awal tahun trend penjualan nya adalah naik, namun cenderung tidak signifikan. namun di tahun 2002 mengalami penjualan menurun, namun setelah itu malah terjadi lonjakan penjualan di tahun 2003 dan tahun selanjutnya memberikan gambaran tren penjualan yang naik")
